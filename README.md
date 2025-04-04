@@ -8,4 +8,4 @@ A través de los pasos detallados, aprenderás cómo configurar un usuario con l
 
 Para obtener instrucciones detalladas paso a paso sobre cómo llevar a cabo estos procesos, visita la página completa con todos los detalles y ejemplos haciendo clic en el siguiente enlace:
 
-[**Guía Completa sobre MySQL y phpMyAdmin**](https://luismi14.github.io/NETSTAT.github.io/)
+[**Guía Completa sobre MySQL y phpMyAdmin**](https://luismi14.github.io/PHP.github.io/)
