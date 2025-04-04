@@ -1,1 +1,87 @@
-Hello World
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Guía paso a paso para crear un usuario y conectarse a MySQL a través de phpMyAdmin.">
+  <title>Guía para Crear un Usuario y Conectarse a MySQL</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1>Crear un Usuario en MySQL y Conectarse a phpMyAdmin</h1>
+      <p>En esta guía aprenderás a crear un usuario, configurar un host y establecer una contraseña para conectarte a MySQL a través de phpMyAdmin.</p>
+    </div>
+  </header>
+
+  <!-- Sección 1: Introducción -->
+  <section id="introduccion">
+    <div class="container">
+      <h2>Introducción</h2>
+      <p>Si necesitas administrar bases de datos MySQL a través de **phpMyAdmin**, primero deberás crear un usuario con los permisos necesarios y configurarlo correctamente en tu servidor.</p>
+      <p>A continuación te mostraremos el proceso paso a paso para lograrlo.</p>
+    </div>
+  </section>
+
+  <!-- Sección 2: Acceder a MySQL -->
+  <section id="acceso">
+    <div class="container">
+      <h2>1. Acceder a MySQL</h2>
+      <p>Primero, debes acceder a MySQL como el usuario **root** desde la terminal de tu servidor:</p>
+      <pre><code>mysql -u root -p</code></pre>
+      <p>Este comando te pedirá la contraseña del usuario **root**. Después de ingresarla, estarás dentro de la consola de MySQL.</p>
+    </div>
+  </section>
+
+  <!-- Sección 3: Crear un Usuario -->
+  <section id="crear-usuario">
+    <div class="container">
+      <h2>2. Crear un Usuario</h2>
+      <p>Para crear un nuevo usuario en MySQL, utiliza el siguiente comando, reemplazando <code>'nombre_usuario'</code> y <code>'contraseña'</code> con los valores que desees:</p>
+      <pre><code>CREATE USER 'nombre_usuario'@'localhost' IDENTIFIED BY 'contraseña';</code></pre>
+      <p>Este comando creará un usuario que solo podrá acceder desde el host local (<code>localhost</code>).</p>
+    </div>
+  </section>
+
+  <!-- Sección 4: Asignar Privilegios -->
+  <section id="asignar-privilegios">
+    <div class="container">
+      <h2>3. Asignar Privilegios al Usuario</h2>
+      <p>Ahora, debes asignar los privilegios al usuario para que pueda acceder y manipular las bases de datos. Para darle todos los privilegios sobre una base de datos específica, utiliza el siguiente comando:</p>
+      <pre><code>GRANT ALL PRIVILEGES ON nombre_base_de_datos.* TO 'nombre_usuario'@'localhost';</code></pre>
+      <p>Si deseas que el usuario tenga privilegios globales sobre todas las bases de datos, usa:</p>
+      <pre><code>GRANT ALL PRIVILEGES ON *.* TO 'nombre_usuario'@'localhost';</code></pre>
+    </div>
+  </section>
+
+  <!-- Sección 5: Aplicar los Cambios -->
+  <section id="aplicar-cambios">
+    <div class="container">
+      <h2>4. Aplicar los Cambios</h2>
+      <p>Después de asignar los privilegios, asegúrate de que los cambios sean aplicados con el siguiente comando:</p>
+      <pre><code>FLUSH PRIVILEGES;</code></pre>
+      <p>Este comando recarga los privilegios y asegura que el nuevo usuario tenga acceso a las bases de datos.</p>
+    </div>
+  </section>
+
+  <!-- Sección 6: Acceder a phpMyAdmin -->
+  <section id="phpmyadmin">
+    <div class="container">
+      <h2>5. Acceder a phpMyAdmin</h2>
+      <p>Una vez que el usuario esté creado y configurado, puedes acceder a **phpMyAdmin** utilizando el nombre de usuario y la contraseña que acabas de crear.</p>
+      <p>En la página de inicio de sesión de phpMyAdmin, ingresa el nombre de usuario y la contraseña que definiste previamente. Asegúrate de que el host esté configurado como <code>localhost</code>.</p>
+      <p>Con esto, ya podrás gestionar todas tus bases de datos a través de phpMyAdmin.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Guía para Crear un Usuario MySQL | <a href="https://luismi14.github.io/PHP.github.io/">Más Información</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
